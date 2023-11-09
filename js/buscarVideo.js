@@ -13,8 +13,13 @@ async function buscarVideo(evento){
     }
 
     busca.forEach(elemento => lista.appendChild(
-        constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)
-        ))
+        constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)))
+    
+    if(busca.length == 0){
+        lista.innerHTML = `<h2 class="mensagem__titulo">Não existem vídeos com este termo</h2>`
+    }
+    
+    
 
 }
 
